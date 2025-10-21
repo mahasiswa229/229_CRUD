@@ -17,5 +17,6 @@ const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'faqihMysql',
-  database: 'biodata'
+  database: 'biodata',
+  port: 3307
 }); 
