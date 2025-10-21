@@ -28,3 +28,14 @@ db.connect((err) => {
   }
     console.log('Connected to the MySQL database.');
 });
+
+app.get('/api/mahasiswa', (req, res) => {
+    db.query('SELECT * FROM mahasiswa', (err, results) => {
+        if (err) {
+            console.error('Error fetching data:', err);
+            res.status(500).send('Error fetching data');
+            return;
+        }
+        res.json(results);
+    });
+});
